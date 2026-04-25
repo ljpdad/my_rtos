@@ -1,0 +1,7 @@
+--target=arm-arm-none-eabi -mcpu=cortex-m3 -masm=auto -c
+-gdwarf-4
+-I./RTE/_KEY-DEMO
+-ID:/keil/ARM/CMSIS/5.9.0/CMSIS/Core/Include
+-ID:/keil/Keil/STM32F1xx_DFP/2.4.1/Device/Include
+-Wa,armasm,--pd,"__UVISION_VERSION SETA 537" -Wa,armasm,--pd,"_RTE_ SETA 1" -Wa,armasm,--pd,"STM32F10X_MD SETA 1" -Wa,armasm,--pd,"_RTE_ SETA 1"
+-o ./rtos.o "rtos.s"

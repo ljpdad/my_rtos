@@ -1,0 +1,6 @@
+--cpu Cortex-M3 -g --apcs=interwork 
+-I.\RTE\_KEY-DEMO
+-IE:\keil\ARM\CMSIS\6.1.0\CMSIS\Core\Include
+-IE:\keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include
+--pd "__UVISION_VERSION SETA 540" --pd "STM32F10X_MD SETA 1" --pd "_RTE_ SETA 1"
+--list ..\listing\rtos.lst --xref -o .\rtos.o --depend .\rtos.d "rtos.s"

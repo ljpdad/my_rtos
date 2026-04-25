@@ -1,0 +1,6 @@
+-c --cpu Cortex-M3 -g -O1 --apcs=interwork -I ..\CMSIS -I ..\FWlib\inc -I ..\USER
+-I.\RTE\_KEY-DEMO
+-IE:\keil\ARM\CMSIS\6.1.0\CMSIS\Core\Include
+-IE:\keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include
+-D__UVISION_VERSION="540" -DSTM32F10X_MD -D_RTE_ -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD
+-o .\semaphore.o --omf_browse .\semaphore.crf --depend .\semaphore.d "semaphore.c"

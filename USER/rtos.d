@@ -1,0 +1,1 @@
+.\rtos.o: rtos.s

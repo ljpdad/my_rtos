@@ -1,0 +1,140 @@
+
+
+
+ARM Macro Assembler    Page 1 
+
+
+    1 00000000                 AREA             MY_CODE, CODE, READONLY
+    2 00000000         
+    3 00000000                 EXPORT           my_rtos_task_switch
+    4 00000000                 EXPORT           taskYield
+    5 00000000         
+    6 00000000                 EXTERN           pxCurrentTcb
+    7 00000000                 EXTERN           vTaskSwitchContext
+    8 00000000         
+    9 00000000         taskYield
+   10 00000000 480F            ldr              r0, =0xE000ED04 ; NVIC中断控
+                                                            制寄存器地址
+   11 00000002 F04F 5180       ldr              r1, =0x10000000 
+                                                            ; PendSV触发位
+   12 00000006 6001            str              r1, [r0]    ; 触发PendSV
+   13 00000008 4770            bx               lr          ; 返回
+   14 0000000A         
+   15 0000000A         PendSV_Handler
+   16 0000000A F3EF 8009       mrs              r0, psp
+   17 0000000E F3BF 8F6F       isb
+   18 00000012         
+   19 00000012 4B0C            ldr              r3, =pxCurrentTcb ; Get the loc
+                                                            ation of the curren
+                                                            t TCB
+   20 00000014 681A            ldr              r2, [r3]
+   21 00000016         
+   22 00000016 E920 0FF0       stmdb            r0!, {r4-r11} ; Save the remain
+                                                            ing registers
+   23 0000001A 6010            str              r0, [r2]    ; Save the new top 
+                                                            of stack into the f
+                                                            irst member of the 
+                                                            TCB
+   24 0000001C         
+   25 0000001C B508            stmdb            sp!, {r3, r14}
+   26 0000001E         ; mov r0, #configMAX_SYSCALL_INTERRUPT_PRIORITY
+   27 0000001E         ; msr basepri, r0
+   28 0000001E         ; dsb
+   29 0000001E F3BF 8F6F       isb
+   30 00000022 F7FF FFFE       bl               vTaskSwitchContext
+   31 00000026         ; mov r0, #0
+   32 00000026         ; msr basepri, r0
+   33 00000026 E8BD 4008       ldmia            sp!, {r3, r14}
+   34 0000002A         
+   35 0000002A 6819            ldr              r1, [r3]
+   36 0000002C 6808            ldr              r0, [r1]    ; The first item in
+                                                             pxCurrentTcb is th
+                                                            e task top of stack
+                                                            
+   37 0000002E E8B0 0FF0       ldmia            r0!, {r4-r11} ; Pop the registe
+                                                            rs and the critical
+                                                             nesting count
+   38 00000032 F380 8809       msr              psp, r0
+   39 00000036 F3BF 8F6F       isb
+   40 0000003A 4770            bx               r14
+   41 0000003C         
+   42 0000003C         my_rtos_task_switch
+   43 0000003C 4770            bx               lr
+   44 0000003E         
+   45 0000003E                 END
+              00 00 E000ED04 
+
+
+
+ARM Macro Assembler    Page 2 
+
+
+              00000000 
+Command Line: --debug --xref --diag_suppress=9931 --cpu=Cortex-M3 --apcs=interw
+ork --depend=.\rtos.d -o.\rtos.o -I.\RTE\_KEY-DEMO -IE:\keil\ARM\CMSIS\6.1.0\CM
+SIS\Core\Include -IE:\keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include --predefine=
+"__UVISION_VERSION SETA 540" --predefine="STM32F10X_MD SETA 1" --predefine="_RT
+E_ SETA 1" --list=..\listing\rtos.lst rtos.s
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+Relocatable symbols
+
+MY_CODE 00000000
+
+Symbol: MY_CODE
+   Definitions
+      At line 1 in file rtos.s
+   Uses
+      None
+Comment: MY_CODE unused
+PendSV_Handler 0000000A
+
+Symbol: PendSV_Handler
+   Definitions
+      At line 15 in file rtos.s
+   Uses
+      None
+Comment: PendSV_Handler unused
+my_rtos_task_switch 0000003C
+
+Symbol: my_rtos_task_switch
+   Definitions
+      At line 42 in file rtos.s
+   Uses
+      At line 3 in file rtos.s
+Comment: my_rtos_task_switch used once
+taskYield 00000000
+
+Symbol: taskYield
+   Definitions
+      At line 9 in file rtos.s
+   Uses
+      At line 4 in file rtos.s
+Comment: taskYield used once
+4 symbols
+
+
+
+ARM Macro Assembler    Page 1 Alphabetic symbol ordering
+External symbols
+
+pxCurrentTcb 00000000
+
+Symbol: pxCurrentTcb
+   Definitions
+      At line 6 in file rtos.s
+   Uses
+      At line 19 in file rtos.s
+Comment: pxCurrentTcb used once
+vTaskSwitchContext 00000000
+
+Symbol: vTaskSwitchContext
+   Definitions
+      At line 7 in file rtos.s
+   Uses
+      At line 30 in file rtos.s
+Comment: vTaskSwitchContext used once
+2 symbols
+341 symbols in table
