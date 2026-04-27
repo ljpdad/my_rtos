@@ -10,7 +10,7 @@ void SemaphoreGive(Semaphore_t *sem)
 		 task=sem->wait_list;
 		sem->wait_list=task->taskNext;
 		task->status=TASK_READY;
-		taskListAdd(task,&taskReadyList);
+		taskListAdd(task,&taskReadyList[task->taskPriority]);
 	}
 	
 }
@@ -34,7 +34,7 @@ uint32_t SemaphoreTake(Semaphore_t *sem)
         return 1;  // 成功
     }
 	// 4. 当前任务从就绪列表移除
-    vListRemoveTask(pxCurrentTcb,&taskReadyList);
+    vListRemoveTask(pxCurrentTcb,&taskReadyList[pxCurrentTcb->taskPriority]);
     
     // 5. 设置任务状态为阻塞
     pxCurrentTcb->status = TASK_BLOCKED;

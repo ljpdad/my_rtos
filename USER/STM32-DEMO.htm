@@ -3,7 +3,7 @@
 <title>Static Call Graph - [.\STM32-DEMO.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image .\STM32-DEMO.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Sat Apr 25 10:01:31 2026
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060960: Last Updated: Mon Apr 27 13:46:40 2026
 <BR><P>
 <H3>Maximum Stack Usage =         24 bytes + Unknown(Functions without stacksize, Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -546,12 +546,12 @@ Global Symbols
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSwitchContext
 </UL>
 
-<P><STRONG><a name="[66]"></a>findTaskHighest</STRONG> (Thumb, 28 bytes, Stack size 0 bytes, task.o(.text))
+<P><STRONG><a name="[66]"></a>findTaskHighest</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, task.o(.text))
 <BR><BR>[Called By]<UL><LI><a href="#[63]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;startScheduler
 <LI><a href="#[64]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;vTaskSwitchContext
 </UL>
 
-<P><STRONG><a name="[64]"></a>vTaskSwitchContext</STRONG> (Thumb, 52 bytes, Stack size 8 bytes, task.o(.text))
+<P><STRONG><a name="[64]"></a>vTaskSwitchContext</STRONG> (Thumb, 62 bytes, Stack size 8 bytes, task.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 8<LI>Call Chain = vTaskSwitchContext
 </UL>
 <BR>[Calls]<UL><LI><a href="#[66]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;findTaskHighest
@@ -561,7 +561,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[68]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;taskYield
 </UL>
 
-<P><STRONG><a name="[62]"></a>taskCreate</STRONG> (Thumb, 120 bytes, Stack size 12 bytes, task.o(.text))
+<P><STRONG><a name="[62]"></a>taskCreate</STRONG> (Thumb, 124 bytes, Stack size 12 bytes, task.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 12<LI>Call Chain = taskCreate
 </UL>
 <BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;taskListAdd
@@ -569,7 +569,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[63]"></a>startScheduler</STRONG> (Thumb, 38 bytes, Stack size 8 bytes, task.o(.text))
+<P><STRONG><a name="[63]"></a>startScheduler</STRONG> (Thumb, 44 bytes, Stack size 8 bytes, task.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16 + Unknown Stack Size
 <LI>Call Chain = startScheduler &rArr; taskYield &rArr; vTaskSwitchContext
 </UL>
@@ -580,7 +580,7 @@ Global Symbols
 <BR>[Called By]<UL><LI><a href="#[57]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;main
 </UL>
 
-<P><STRONG><a name="[61]"></a>SemaphoreGive</STRONG> (Thumb, 30 bytes, Stack size 0 bytes, semaphore.o(.text))
+<P><STRONG><a name="[61]"></a>SemaphoreGive</STRONG> (Thumb, 36 bytes, Stack size 0 bytes, semaphore.o(.text))
 <BR><BR>[Calls]<UL><LI><a href="#[65]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;taskListAdd
 </UL>
 <BR>[Called By]<UL><LI><a href="#[60]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;myTask2
@@ -590,7 +590,7 @@ Global Symbols
 <BR><BR>[Called By]<UL><LI><a href="#[5d]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;myTask1
 </UL>
 
-<P><STRONG><a name="[5f]"></a>SemaphoreTake</STRONG> (Thumb, 48 bytes, Stack size 16 bytes, semaphore.o(.text))
+<P><STRONG><a name="[5f]"></a>SemaphoreTake</STRONG> (Thumb, 54 bytes, Stack size 16 bytes, semaphore.o(.text))
 <BR><BR>[Stack]<UL><LI>Max Depth = 24 + Unknown Stack Size
 <LI>Call Chain = SemaphoreTake &rArr; taskYield &rArr; vTaskSwitchContext
 </UL>

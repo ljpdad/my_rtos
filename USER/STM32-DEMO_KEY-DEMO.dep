@@ -3,16 +3,16 @@ CompilerVersion: 5060960::V5.06 update 7 (build 960)::.\aaa
 F (..\CMSIS\startup\startup_stm32f10x_hd.s)(0x4E662AE4)(--cpu Cortex-M3 -g --apcs=interwork -I.\RTE\_KEY-DEMO-IE:\keil\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IE:\keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include--pd "__UVISION_VERSION SETA 540" --pd "STM32F10X_MD SETA 1" --pd "_RTE_ SETA 1"--list ..\listing\startup_stm32f10x_hd.lst --xref -o .\startup_stm32f10x_hd.o --depend .\startup_stm32f10x_hd.d)
 F (.\rtos.s)(0x69EB147E)(--cpu Cortex-M3 -g --apcs=interwork -I.\RTE\_KEY-DEMO-IE:\keil\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IE:\keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include--pd "__UVISION_VERSION SETA 540" --pd "STM32F10X_MD SETA 1" --pd "_RTE_ SETA 1"--list ..\listing\rtos.lst --xref -o .\rtos.o --depend .\rtos.d)
 F (.\main.c)(0x69EC1DBF)(-c --cpu Cortex-M3 -g -O1 --apcs=interwork -I ..\CMSIS -I ..\FWlib\inc -I ..\USER-I.\RTE\_KEY-DEMO-IE:\keil\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IE:\keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="540" -DSTM32F10X_MD -D_RTE_ -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\main.o --omf_browse .\main.crf --depend .\main.d)
-I (task.h)(0x69EB4E69)
+I (task.h)(0x69EEF7CE)
 I (type.h)(0x69EB54DC)
 I (semaphore.h)(0x69EB5522)
-F (.\task.c)(0x69EB4E70)(-c --cpu Cortex-M3 -g -O1 --apcs=interwork -I ..\CMSIS -I ..\FWlib\inc -I ..\USER-I.\RTE\_KEY-DEMO-IE:\keil\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IE:\keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="540" -DSTM32F10X_MD -D_RTE_ -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\task.o --omf_browse .\task.crf --depend .\task.d)
-I (task.h)(0x69EB4E69)
+F (.\task.c)(0x69EEF83F)(-c --cpu Cortex-M3 -g -O1 --apcs=interwork -I ..\CMSIS -I ..\FWlib\inc -I ..\USER-I.\RTE\_KEY-DEMO-IE:\keil\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IE:\keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="540" -DSTM32F10X_MD -D_RTE_ -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\task.o --omf_browse .\task.crf --depend .\task.d)
+I (task.h)(0x69EEF7CE)
 I (type.h)(0x69EB54DC)
-F (.\task.h)(0x69EB4E69)()
+F (.\task.h)(0x69EEF7CE)()
 F (.\type.h)(0x69EB54DC)()
 F (.\semaphore.h)(0x69EB5522)()
-F (.\semaphore.c)(0x69EC1485)(-c --cpu Cortex-M3 -g -O1 --apcs=interwork -I ..\CMSIS -I ..\FWlib\inc -I ..\USER-I.\RTE\_KEY-DEMO-IE:\keil\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IE:\keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="540" -DSTM32F10X_MD -D_RTE_ -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\semaphore.o --omf_browse .\semaphore.crf --depend .\semaphore.d)
+F (.\semaphore.c)(0x69EEF822)(-c --cpu Cortex-M3 -g -O1 --apcs=interwork -I ..\CMSIS -I ..\FWlib\inc -I ..\USER-I.\RTE\_KEY-DEMO-IE:\keil\ARM\CMSIS\6.1.0\CMSIS\Core\Include-IE:\keil\Keil\STM32F1xx_DFP\2.4.1\Device\Include-D__UVISION_VERSION="540" -DSTM32F10X_MD -D_RTE_ -DUSE_STDPERIPH_DRIVER -DSTM32F10X_HD-o .\semaphore.o --omf_browse .\semaphore.crf --depend .\semaphore.d)
 I (Semaphore.h)(0x69EB5522)
 I (type.h)(0x69EB54DC)
-I (task.h)(0x69EB4E69)
+I (task.h)(0x69EEF7CE)
